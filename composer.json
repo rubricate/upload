@@ -1,0 +1,14 @@
+{
+    "name": "rubricate/upload",
+    "authors": [
+        {
+            "name": "Estefanio NS",
+            "email": "estefanions@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rubricate\\Upload\\": "Rubricate/Upload/"
+        }
+    }
+}
