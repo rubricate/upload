@@ -2,14 +2,16 @@
 
 require '../vendor/autoload.php';
 
-use Rubricate\Upload\FileUpload;
+use Rubricate\Upload;
 
 if( isset($_POST['submit']) )
 {
-    $file = $_FILES['file'];
-    $path = dirname(__FILE__) . '/upload/';
+    $httpUpload = new Upload\HttpUpload(
+        new Upload\RequestFilesUpload('file'),
+        new Upload\PathUpload(dirname(__FILE__) . '/upload/')
+    );
 
-    $upload = new FileUpload($file, $path);
+    $upload = new Upload\FileUpload($httpUpload);
     $upload->moveFile();
 }
 

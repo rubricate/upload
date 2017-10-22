@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
  *
@@ -11,10 +11,9 @@
 
 namespace Rubricate\Upload;
 
-
-interface IGetFileUpload
+interface IRequestFilesUpload
 {
-    public function getFile($key);
+    public function getFiles();
 }
 
 

@@ -12,9 +12,12 @@
 namespace Rubricate\Upload;
 
 
-interface IGetFileUpload
+interface IHttpUpload extends 
+    IGetFileUpload, 
+    IGetPathUpload 
 {
-    public function getFile($key);
 }
+
+
 
 
