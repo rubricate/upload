@@ -21,7 +21,8 @@ class ImagePngUpload implements IMoveFileUpload
 
     public function __construct(IHttpUpload $http)
     {
-        $this->http = $http;
+        $this->http  = $http;
+        $this->width = new WidthUpload($this->width);
     }
 
 
@@ -29,7 +30,7 @@ class ImagePngUpload implements IMoveFileUpload
 
     public function setWidth($width)
     {
-        $this->width = $width;
+        $this->width->setSize($width);
         return $this;
     } 
 
@@ -40,11 +41,12 @@ class ImagePngUpload implements IMoveFileUpload
     {
         $i = imagecreatefrompng($this->http->getFile('tmp_name'));
         $p = $this->http->getPath() . $this->http->getFile('name');
+        $w = $this->width->getSize();
 
         $x = imagesx($i);
         $y = imagesy($i);
 
-        $ix = ($this->width < $x)? $this->width: $x;
+        $ix = ($w < $x)? $w: $x;
         $iy = ($ix * $y)/ $x;
         $n  = imagecreatetruecolor($ix, $iy);
 
