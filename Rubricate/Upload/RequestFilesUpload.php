@@ -13,15 +13,13 @@
 
 namespace Rubricate\Upload;
 
-
 class RequestFilesUpload implements IRequestFilesUpload
 {
     private $files;
     
     public function __construct($key)
     {
-        if(!array_key_exists($key, $_FILES))
-        {
+        if (!array_key_exists($key, $_FILES)) {
             throw new \Exception("Erro \$_FILES - key: {$key} not found. \n");
         }
 
@@ -31,7 +29,6 @@ class RequestFilesUpload implements IRequestFilesUpload
 
     public function getFiles()
     {
-       return  $this->files;
-    } 
+        return  $this->files;
+    }
 }
-

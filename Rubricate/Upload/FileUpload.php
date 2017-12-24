@@ -13,7 +13,6 @@
 
 namespace Rubricate\Upload;
 
-
 class FileUpload implements IMoveFileUpload
 {
     private $http;
@@ -25,13 +24,12 @@ class FileUpload implements IMoveFileUpload
     }
 
 
-    public function moveFile() 
+    public function moveFile()
     {
-        return 
+        return
             move_uploaded_file(
-                $this->http->getFile('tmp_name'), 
+                $this->http->getFile('tmp_name'),
                 $this->http->getPath() . $this->http->getFile('name')
             );
     }
 }
-

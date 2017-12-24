@@ -13,23 +13,22 @@
 
 namespace Rubricate\Upload;
 
-
 class HttpUpload implements IHttpUpload
 {
     private $path;
-    private $file; 
+    private $file;
     private $fileName;
-    private $isMove   = FALSE;
+    private $isMove   = false;
     private $validKey = array(
-        'name', 'tmp_name', 'type', 
+        'name', 'tmp_name', 'type',
         'error', 'size'
     );
 
 
     public function __construct(
-        IRequestFilesUpload $file, IGetPathUpload $path
-    )
-    {
+        IRequestFilesUpload $file,
+        IGetPathUpload $path
+    ) {
         $this->path     = $path->getPath();
         $this->file     = $file->getFiles();
         $this->fileName = $this->file['name'];
@@ -39,7 +38,7 @@ class HttpUpload implements IHttpUpload
     public function setFileName($name)
     {
         $fn = self::getFile('name');
-        $ex = pathinfo( $fn, PATHINFO_EXTENSION);
+        $ex = pathinfo($fn, PATHINFO_EXTENSION);
 
         $this->fileName = $name . '.' . $ex;
 
@@ -60,7 +59,7 @@ class HttpUpload implements IHttpUpload
         }
 
         return $this->fileName;
-    } 
+    }
 
 
     public function getPath()
@@ -71,12 +70,13 @@ class HttpUpload implements IHttpUpload
 
     private function getMessageException($key)
     {
-        return sprintf( ''
+        return sprintf(
+            ''
             . 'Key "%s" invalid. '
             . 'Use the key: %s'
-            .  PHP_EOL, $key, 
-            implode(',', $this->validKey) 
-        ); 
-    } 
+            .  PHP_EOL,
+            $key,
+            implode(',', $this->validKey)
+        );
+    }
 }
-

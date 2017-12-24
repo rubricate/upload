@@ -1,13 +1,11 @@
-<?php 
+<?php
 
 
 namespace Rubricate\Upload;
 
-
-interface IFileUpload extends 
-    IGetFileUpload, 
-    IGetPathUpload, 
+interface IFileUpload extends
+    IGetFileUpload,
+    IGetPathUpload,
     IMoveFileUpload
 {
 }
-

@@ -13,7 +13,6 @@
 
 namespace Rubricate\Upload;
 
-
 class PathUpload implements IGetPathUpload
 {
     private $path;
@@ -26,7 +25,6 @@ class PathUpload implements IGetPathUpload
 
     public function getPath()
     {
-       return  $this->path;
-    } 
+        return  $this->path;
+    }
 }
-

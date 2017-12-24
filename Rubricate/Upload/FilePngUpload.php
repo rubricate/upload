@@ -13,7 +13,6 @@
 
 namespace Rubricate\Upload;
 
-
 class FilePngUpload implements IMoveFileUpload
 {
     private $http;
@@ -31,10 +30,10 @@ class FilePngUpload implements IMoveFileUpload
     {
         $this->width->setSize($width);
         return $this;
-    } 
+    }
 
 
-    public function moveFile() 
+    public function moveFile()
     {
         $i = imagecreatefrompng($this->http->getFile('tmp_name'));
         $p = $this->http->getPath() . $this->http->getFile('name');
@@ -47,12 +46,11 @@ class FilePngUpload implements IMoveFileUpload
         $iy = ($ix * $y)/ $x;
         $n  = imagecreatetruecolor($ix, $iy);
 
-        imagealphablending($n, FALSE);
-        imagesavealpha($n, TRUE);
-        imagecopyresampled($n, $i, 0, 0 , 0, 0, $ix, $iy, $x, $y);
+        imagealphablending($n, false);
+        imagesavealpha($n, true);
+        imagecopyresampled($n, $i, 0, 0, 0, 0, $ix, $iy, $x, $y);
         imagepng($n, $p);
 
         return $this;
     }
 }
-

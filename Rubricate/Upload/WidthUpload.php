@@ -13,7 +13,6 @@
 
 namespace Rubricate\Upload;
 
-
 class WidthUpload implements IGetSizeUpload
 {
     private $size;
@@ -34,12 +33,11 @@ class WidthUpload implements IGetSizeUpload
         $this->size = (int) $size;
 
         return $this;
-    } 
+    }
 
 
     public function getSize()
     {
         return $this->size;
-    } 
+    }
 }
-
