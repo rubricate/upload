@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  *
  * @package     RubricatePHP
@@ -9,7 +10,9 @@
  * 
  */
 
+
 namespace Rubricate\Upload;
+
 
 class HttpUpload implements IHttpUpload
 {
@@ -23,20 +26,14 @@ class HttpUpload implements IHttpUpload
     );
 
 
-
-
-
     public function __construct(
-        IRequestFilesUpload $file, 
-        IGetPathUpload      $path
+        IRequestFilesUpload $file, IGetPathUpload $path
     )
     {
         $this->path     = $path->getPath();
         $this->file     = $file->getFiles();
         $this->fileName = $this->file['name'];
     }
-
-
 
 
     public function setFileName($name)
@@ -50,25 +47,20 @@ class HttpUpload implements IHttpUpload
     }
 
 
-
-
-
     public function getFile($key)
     {
         $key = strtolower($key);
 
-        self::keyException($key);
+        if (!in_array($key, $this->validKey)) {
+            throw new \Exception(self::getMessageException($key));
+        }
 
-        if($key !== 'name')
-        {
+        if ($key !== 'name') {
             return $this->file[$key];
         }
 
         return $this->fileName;
     } 
-
-
-
 
 
     public function getPath()
@@ -77,32 +69,14 @@ class HttpUpload implements IHttpUpload
     }
 
 
-
-
-
-
-    private function keyException($key)
+    private function getMessageException($key)
     {
-        $str = ''
+        return sprintf( ''
             . 'Key "%s" invalid. '
             . 'Use the key: %s'
-            .  PHP_EOL;
-
-        if(!in_array($key, $this->validKey))
-        {
-            throw new \Exception( 
-                sprintf(
-                    $str, $key, 
-                    implode(', ', $this->validKey)
-                ) 
-            );
-        }
+            .  PHP_EOL, $key, 
+            implode(',', $this->validKey) 
+        ); 
     } 
-
-
-
-
-
 }
-
 

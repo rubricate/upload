@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  *
  * @package     RubricatePHP
@@ -9,11 +10,12 @@
  * 
  */
 
+
 namespace Rubricate\Upload;
+
 
 class RequestFilesUpload implements IRequestFilesUpload
 {
-
     private $files;
     
     public function __construct($key)
@@ -27,16 +29,9 @@ class RequestFilesUpload implements IRequestFilesUpload
     }
 
 
-
     public function getFiles()
     {
        return  $this->files;
     } 
-
-
-
-
 }
-
-
 

@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  *
  * @package     RubricatePHP
@@ -9,11 +10,12 @@
  * 
  */
 
+
 namespace Rubricate\Upload;
+
 
 class PathUpload implements IGetPathUpload
 {
-
     private $path;
     
     public function __construct($path)
@@ -22,17 +24,9 @@ class PathUpload implements IGetPathUpload
     }
 
 
-
     public function getPath()
     {
        return  $this->path;
     } 
-
-
-
-
 }
-
-
-
 

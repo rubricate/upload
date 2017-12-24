@@ -1,5 +1,6 @@
 <?php 
 
+
 namespace Rubricate\Upload;
 
 
@@ -9,6 +10,4 @@ interface IFileUpload extends
     IMoveFileUpload
 {
 }
-
-
 

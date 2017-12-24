@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  *
  * @package     RubricatePHP
@@ -9,11 +10,12 @@
  * 
  */
 
+
 namespace Rubricate\Upload;
+
 
 interface IRequestFilesUpload
 {
     public function getFiles();
 }
-
 

@@ -1,5 +1,6 @@
 <?php 
 
+
 /*
  *
  * @package     RubricatePHP
@@ -9,6 +10,7 @@
  * 
  */
 
+
 namespace Rubricate\Upload;
 
 
@@ -16,5 +18,4 @@ interface IGetPathUpload
 {
     public function getPath();
 }
-
 

@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  *
  * @package     RubricatePHP
@@ -9,7 +10,9 @@
  * 
  */
 
+
 namespace Rubricate\Upload;
+
 
 class WidthUpload implements IGetSizeUpload
 {
@@ -22,11 +25,9 @@ class WidthUpload implements IGetSizeUpload
     }
 
 
-
-
     public function setSize($size)
     {
-        if((int) $size < 1){
+        if ((int) $size < 1) {
             throw new \Exception('invalid widht');
         }
 
@@ -36,13 +37,9 @@ class WidthUpload implements IGetSizeUpload
     } 
 
 
-
-
     public function getSize()
     {
         return $this->size;
     } 
-
-
 }
 

@@ -1,5 +1,6 @@
 <?php 
 
+
 /*
  *
  * @package     RubricatePHP
@@ -8,6 +9,8 @@
  * @copyright   2017
  * 
  */
+
+
 namespace Rubricate\Upload;
 
 
@@ -15,5 +18,4 @@ interface IMoveFileUpload
 {
     public function moveFile();
 }
-
 

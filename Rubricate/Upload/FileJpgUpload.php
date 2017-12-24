@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  *
  * @package     RubricatePHP
@@ -9,11 +10,12 @@
  * 
  */
 
+
 namespace Rubricate\Upload;
+
 
 class FileJpgUpload implements IMoveFileUpload
 {
-
     private $http;
     private $width = 1024;
 
@@ -30,9 +32,6 @@ class FileJpgUpload implements IMoveFileUpload
         $this->width->setSize($width);
         return $this;
     } 
-    
-
-
 
 
     public function moveFile() 
@@ -54,9 +53,5 @@ class FileJpgUpload implements IMoveFileUpload
 
         return $this;
     }
-
-
-
-
 }
 

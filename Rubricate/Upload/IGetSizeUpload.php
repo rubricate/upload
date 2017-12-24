@@ -1,5 +1,6 @@
 <?php
 
+
 /*
  *
  * @package     RubricatePHP
@@ -9,7 +10,9 @@
  * 
  */
 
+
 namespace Rubricate\Upload;
+
 
 interface IGetSizeUpload
 {
