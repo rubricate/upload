@@ -4,8 +4,7 @@ require '../vendor/autoload.php';
 
 use Rubricate\Upload;
 
-if( isset($_POST['submit']) )
-{
+if(isset($_POST['submit']) ) {
     $httpUpload = new Upload\HttpUpload(
         new Upload\RequestFilesUpload('file'),
         new Upload\PathUpload(dirname(__FILE__) . '/upload/')
