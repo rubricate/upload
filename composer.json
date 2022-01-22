@@ -6,6 +6,18 @@
             "email": "estefanions@gmail.com"
         }
     ],
+    "keywords": [
+        "rubricateframework",
+        "rubricatephp",
+        "upload"
+    ],
+    "support": {
+        "docs"   : "https://rubricate.github.io/components/upload",
+        "source" : "https://github.com/rubricate/upload"
+    },
+    "require": {
+        "php": "^7.1"
+    },
     "autoload": {
         "psr-4": {
             "Rubricate\\Upload\\": "Rubricate/Upload/"
