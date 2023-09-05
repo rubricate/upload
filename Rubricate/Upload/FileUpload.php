@@ -1,28 +1,15 @@
 <?php
 
-
-/*
- *
- * @package     RubricatePHP
- * @author      Estefanio NS <estefanions AT gmail DOT com>
- * @link        https://github.com/rubricate/upload 
- * @copyright   2013 - 2017
- * 
- */
-
-
 namespace Rubricate\Upload;
 
 class FileUpload implements IMoveFileUpload
 {
     private $http;
 
-
     public function __construct(IHttpUpload $http)
     {
         $this->http = $http;
     }
-
 
     public function moveFile()
     {
@@ -33,3 +20,4 @@ class FileUpload implements IMoveFileUpload
             );
     }
 }
+

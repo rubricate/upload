@@ -1,16 +1,5 @@
 <?php
 
-
-/*
- *
- * @package     RubricatePHP
- * @author      Estefanio NS <estefanions AT gmail DOT com>
- * @link        https://github.com/rubricate/upload 
- * @copyright   2017
- * 
- */
-
-
 namespace Rubricate\Upload;
 
 class HttpUpload implements IHttpUpload
@@ -24,7 +13,6 @@ class HttpUpload implements IHttpUpload
         'error', 'size'
     );
 
-
     public function __construct(
         IRequestFilesUpload $file,
         IGetPathUpload $path
@@ -33,7 +21,6 @@ class HttpUpload implements IHttpUpload
         $this->file     = $file->getFiles();
         $this->fileName = $this->file['name'];
     }
-
 
     public function setFileName($name)
     {
@@ -44,7 +31,6 @@ class HttpUpload implements IHttpUpload
 
         return $this;
     }
-
 
     public function getFile($key)
     {
@@ -61,12 +47,10 @@ class HttpUpload implements IHttpUpload
         return $this->fileName;
     }
 
-
     public function getPath()
     {
         return $this->path;
     }
-
 
     private function getMessageException($key)
     {
@@ -80,3 +64,4 @@ class HttpUpload implements IHttpUpload
         );
     }
 }
+

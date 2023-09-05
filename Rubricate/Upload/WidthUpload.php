@@ -1,28 +1,15 @@
 <?php
 
-
-/*
- *
- * @package     RubricatePHP
- * @author      Estefanio NS <estefanions AT gmail DOT com>
- * @link        https://github.com/rubricate/upload 
- * @copyright   2017
- * 
- */
-
-
 namespace Rubricate\Upload;
 
 class WidthUpload implements IGetSizeUpload
 {
     private $size;
 
-
     public function __construct($size)
     {
         self::setSize($size);
     }
-
 
     public function setSize($size)
     {
@@ -35,9 +22,9 @@ class WidthUpload implements IGetSizeUpload
         return $this;
     }
 
-
     public function getSize()
     {
         return $this->size;
     }
 }
+
