@@ -16,7 +16,7 @@
         "source" : "https://github.com/rubricate/upload"
     },
     "require": {
-        "php": "^7.1"
+        "php": ">=5.4"
     },
     "autoload": {
         "psr-4": {
@@ -24,3 +24,4 @@
         }
     }
 }
+
