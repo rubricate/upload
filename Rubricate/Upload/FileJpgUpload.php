@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Upload;
 
 class FileJpgUpload implements IMoveFileUpload
@@ -13,13 +15,13 @@ class FileJpgUpload implements IMoveFileUpload
         $this->width = new WidthUpload($this->width);
     }
 
-    public function setWidth($width)
+    public function setWidth($width): object
     {
         $this->width->setSize($width);
         return $this;
     }
 
-    public function moveFile()
+    public function moveFile(): object
     {
         $i = imagecreatefromjpeg($this->http->getFile('tmp_name'));
         $p = $this->http->getPath() . $this->http->getFile('name');

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Upload;
 
 class HttpUpload implements IHttpUpload
@@ -22,7 +24,7 @@ class HttpUpload implements IHttpUpload
         $this->fileName = $this->file['name'];
     }
 
-    public function setFileName($name)
+    public function setFileName($name): object
     {
         $fn = self::getFile('name');
         $ex = pathinfo($fn, PATHINFO_EXTENSION);
@@ -32,7 +34,7 @@ class HttpUpload implements IHttpUpload
         return $this;
     }
 
-    public function getFile($key)
+    public function getFile($key): string
     {
         $key = strtolower($key);
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Upload;
 
 class RequestFilesUpload implements IRequestFilesUpload
@@ -15,7 +17,7 @@ class RequestFilesUpload implements IRequestFilesUpload
         $this->files = $_FILES[$key];
     }
 
-    public function getFiles()
+    public function getFiles(): string
     {
         return  $this->files;
     }

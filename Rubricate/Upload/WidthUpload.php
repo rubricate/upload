@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Upload;
 
 class WidthUpload implements IGetSizeUpload
@@ -11,7 +13,7 @@ class WidthUpload implements IGetSizeUpload
         self::setSize($size);
     }
 
-    public function setSize($size)
+    public function setSize($size): object
     {
         if ((int) $size < 1) {
             throw new \Exception('invalid widht');
@@ -22,7 +24,7 @@ class WidthUpload implements IGetSizeUpload
         return $this;
     }
 
-    public function getSize()
+    public function getSize(): int
     {
         return $this->size;
     }

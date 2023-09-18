@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Rubricate\Upload;
 
 class PathUpload implements IGetPathUpload
@@ -11,7 +13,7 @@ class PathUpload implements IGetPathUpload
         $this->path = $path;
     }
 
-    public function getPath()
+    public function getPath(): string
     {
         return  $this->path;
     }
